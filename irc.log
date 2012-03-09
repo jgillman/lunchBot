@@ -1,0 +1,16 @@
+hello jbot
+tes
+t
+the most frustrating thing about css3 so far is that it isn't fully supported. *shakes fist at i.e. and to a lesser degree the other three*
+Part of it is learning how to write it so that degrades correctly
+That and using vendor prefixes
+vendor prefixes, eh? This sounds like a job for google.
+for example:
+-webkit-box-shadow: … ;
+-moz-box-shadow: … ;
+box-shadow: … ;
+Writing them in that order
+Vendor prefixes are also pretty hotly debated online, so… look out for that.
+A lot of "vendor prefixes are LITERALLY hitler" all the way to "vendor prefixes are given to us by Jesus"
+SASS actually should put most of that stuff in there for you though
+Or such is my understanding
