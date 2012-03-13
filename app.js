@@ -4,7 +4,7 @@ var irc = require('irc'),
 
 
 var orders = [],
-	channel = "#test",
+	channel = "#lunch",
 	topicBase = "lunchBot is here! :: ";
 
 var bot = new irc.Client('irc.corp.pokkari.net', 'lunchBot', {
@@ -66,7 +66,7 @@ bot.addListener('message', function(from, to, message) {
 			}
 			else {
 				for (i in orders) {
-					bot.say(to, orders[i].resturant + " @ " + orders[i].owner + " with " + ((orders[i].people < 1)? "nobody :(": orders[i].people));
+					bot.say(to, orders[i].resturant + " @ " + orders[i].owner + " with " + ((orders[i].people < 1)? "nobody :(": orders[i].people.join(', ')));
 				}
 			}
 		}
@@ -217,7 +217,7 @@ var checkOrderResturantExists = function(resturant) {
 
 var newOrder = function(from, resturant) {
 	var orderOwnerExists = checkOrderOwnerExists(from),
-		restruantExists = checkOrderRetrurantExists(resturant);
+		restruantExists = checkOrderResturantExists(resturant);
 
 	if ( restruantExists ) {
 		bot.say(channel, "Looks like there's alreay and active order for " + resturant + ". Use 'join " + resturant + "' to join that order.");
